@@ -1,0 +1,23 @@
+In a file named UniversalExtractor.py, write a function named extractor with parameters a target directory and  list  of names of files that are in an archived and/or compressed format.
+
+The function will uncompress the standalone files to the target directory, while all archived files will be extracted into subdirectories named the same as the archive file without the file extension. 
+
+Example:  
+  target:    incoming
+  file list:  ['header.txt.gz','data.tgz']
+
+Then header.txt will be a file in the directory incoming  while the file in data.tgz will be pulled out into incoming/data
+
+The last part of your file should be an " if __name__ == '__main__' " section at the bottom of the file to test your function.    It should use command line arguments, so that the command
+
+$ python UniversalExtractor.py incoming  header.txt.gz  data.tgz
+
+will perform the actions in the example above.  You must handle the following formats:
+
+Compression extensions:  .zip, .gz, .bz2
+
+Archive extensions: .tar.gz, .tgz, .tar.bz2, .tbz
+
+If the file is a compressed file, just uncompress it without worrying about whether it has been compressed with a flag that makes it do a recursive zip (and thus will uncompress to a directory).
+
+Only create new directories for the archiving formats.
